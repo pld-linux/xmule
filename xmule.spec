@@ -21,7 +21,7 @@ BuildRequires:	wxGTK-devel >= 2.4.0
 BuildRequires:	gtk+-devel >= 1.2.0
 %else
 BuildRequires:	wxGTK2-devel >= 2.4.0
-BuildRequires:  gtk+2-devel
+BuildRequires:	gtk+2-devel
 %endif
 BuildRequires:	libstdc++-devel
 Requires:	wget
@@ -48,7 +48,6 @@ rm -f missing
 	--with-wx-config=/usr/bin/wxgtk%{?!_with_gtk1:2}-2.4-config \
 	--enable-optimise \
 	--enable-profile
-
 %{__make}
 
 %install
