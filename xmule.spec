@@ -1,11 +1,12 @@
-# bconds
-# --with gtk1
+#
+# Conditional build:
+%bcond_with	gtk1	# build with gtk1 instead of gtk2
 #
 Summary:	Unix port of eMule client
 Summary(pl):	Uniksowy port klienta eMule
 Name:		xmule
 Version:	1.8.2
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
@@ -16,14 +17,14 @@ URL:		http://www.xmule.org/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.7.3
 BuildRequires:	bison
-BuildRequires:	gettext-devel >= 0.11.5
 BuildRequires:	expat-devel
-%if 0%{?_with_gtk1:1}
-BuildRequires:	wxGTK-devel >= 2.4.0
+BuildRequires:	gettext-devel >= 0.11.5
+%if %{with gtk1}
 BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	wxGTK-devel >= 2.4.0
 %else
-BuildRequires:	wxGTK2-devel >= 2.4.0
 BuildRequires:	gtk+2-devel
+BuildRequires:	wxGTK2-devel >= 2.4.0
 %endif
 BuildRequires:	libstdc++-devel
 Requires:	wget
@@ -50,7 +51,7 @@ rm -f missing
 %{__autoconf}
 %{__autoheader}
 %configure \
-	--with-wx-config=/usr/bin/wxgtk%{?!_with_gtk1:2}-2.4-config \
+	--with-wx-config=/usr/bin/wxgtk%{?without_gtk1:2}-2.4-config \
 	--enable-optimise \
 	--enable-profile
 %{__make}
