@@ -5,12 +5,12 @@
 Summary:	Unix port of eMule client
 Summary(pl):	Uniksowy port klienta eMule
 Name:		xmule
-Version:	1.8.4
-Release:	3
+Version:	1.9.0
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/xmule/%{name}-%{version}.tar.bz2
-# Source0-md5:	cc89ff7c717a0aeeddb0cebcddf1b91f
+# Source0-md5:	6610cb64b6e5832926eece3a08ae97e8
 Patch0:		%{name}-pl_typos.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-types.patch
@@ -56,15 +56,15 @@ cp -f /usr/share/automake/config.sub .
 %{__autoconf}
 %{__autoheader}
 %configure \
-	--with-wx-config=/usr/bin/wxgtk%{!?with_gtk1:2}-2.4-config \
-	--enable-optimise \
-	--enable-profile
+	--prefix=$RPM_BUILD_ROOT \
+	--disable-debug-syms \
+	--with-wx-config=/usr/bin/wxgtk%{!?with_gtk1:2}-2.4-config 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_desktopdir},%{_pixmapsdir}}
-install src/{ed2k,xmule} $RPM_BUILD_ROOT%{_bindir}
+install {ed2k,xmule} $RPM_BUILD_ROOT%{_bindir}
 install xmule.desktop $RPM_BUILD_ROOT%{_desktopdir}/xmule.desktop
 install xmule.xpm $RPM_BUILD_ROOT%{_pixmapsdir}/xmule.xpm
 cd po
