@@ -1,0 +1,16 @@
+--- xmule-1.7.3.ble/po/pl.po	2004-02-16 06:44:01.395768944 +0100
++++ xmule-1.7.3/po/pl.po	2003-08-02 21:26:19.000000000 +0200
+@@ -1668,11 +1668,11 @@
+ 
+ #: ../src/strings.en:105
+ msgid "&Resume"
+-msgstr "&WznÃ³w"
++msgstr "&Wznów"
+ 
+ #: ../src/strings.en:106
+ msgid "&Open the file"
+-msgstr "&OtwÃ³rz plik"
++msgstr "&Otwórz plik"
+ 
+ #: ../src/strings.en:107
+ msgid "Show file &details"
