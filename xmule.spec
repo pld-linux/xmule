@@ -4,12 +4,12 @@
 Summary:	Unix port of eMule client
 Summary(pl):	Uniksowy port klienta eMule
 Name:		xmule
-Version:	1.7.1
+Version:	1.7.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5:	86731915c20b02ee0ed72b853512ba16
+# Source0-md5:	7f02963756cbae66662abca58461252d
 URL:		http://www.xmule.org/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.7.3
@@ -44,7 +44,6 @@ rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
-%{__automake}
 %configure \
 	--with-wx-config=/usr/bin/wxgtk%{?!_with_gtk1:2}-2.4-config \
 	--enable-optimise \
