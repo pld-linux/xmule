@@ -1,0 +1,25 @@
+--- xmule-1.8.4/src/CryptoXMpp.h.orig	2004-07-15 06:45:34.000000000 +0200
++++ xmule-1.8.4/src/CryptoXMpp.h	2004-07-20 21:54:25.243222431 +0200
+@@ -231,7 +231,6 @@
+ enum CipherDir {ENCRYPTION,	DECRYPTION};
+ 
+ typedef unsigned short word16;
+-	typedef unsigned long word32;
+ 
+ #if defined(__GNUC__) || defined(__MWERKS__)
+ #	define WORD64_AVAILABLE
+@@ -247,11 +246,13 @@
+ // word should have the same size as your CPU registers
+ // dword should be twice as big as word
+ 
+-#if (defined(__GNUC__) && !defined(__alpha)) || defined(__MWERKS__)
++#if (defined(__GNUC__) && !defined(__alpha) && !defined(__x86_64__) && !defined(__ia64__) && !defined(__sparc64__)) || defined(__MWERKS__)
+ 	typedef unsigned long word;
++	typedef unsigned long word32;
+ 	typedef unsigned long long dword;
+ #else
+ 	typedef unsigned int word;
++	typedef unsigned int word32;
+ 	typedef unsigned long dword;
+ #endif
+ 
