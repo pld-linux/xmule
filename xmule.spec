@@ -5,7 +5,7 @@ Summary:	Unix port of eMule client
 Summary(pl):	Uniksowy port klienta eMule
 Name:		xmule
 Version:	1.7.4c
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
@@ -26,7 +26,7 @@ BuildRequires:	gtk+2-devel
 %endif
 BuildRequires:	libstdc++-devel
 Requires:	wget
-Conflicts:	aMule
+Obsoletes:	aMule
 Obsoletes:	lmule
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,9 +55,9 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_applnkdir}/Network/Misc,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_desktopdir},%{_pixmapsdir}}
 install src/{ed2k,xmule} $RPM_BUILD_ROOT%{_bindir}
-install xmule.desktop $RPM_BUILD_ROOT%{_applnkdir}/Network/Misc/xmule.desktop
+install xmule.desktop $RPM_BUILD_ROOT%{_desktopdir}/xmule.desktop
 install xmule.xpm $RPM_BUILD_ROOT%{_pixmapsdir}/xmule.xpm
 cd po
 %{__make} install \
@@ -76,4 +76,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog ChangeLog-UNSTABLE README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_pixmapsdir}/*
-%{_applnkdir}/Network/Misc/%{name}.desktop
+%{_desktopdir}/%{name}.desktop
