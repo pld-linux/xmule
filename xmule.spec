@@ -5,11 +5,12 @@ Summary:	Unix port of eMule client
 Summary(pl):	Uniksowy port klienta eMule
 Name:		xmule
 Version:	1.4.0
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 # Source0-md5:	f63d4f84479c4e0ef625c054e6cbed10
+Patch0:		%{name}-gtktic.patch
 URL:		http://www.xmule.org/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.7.3
@@ -37,6 +38,8 @@ xMule to linuksowy port klienta eMule.
 %prep
 %setup  -q
 
+%patch0 -p1
+
 %build
 rm -f missing
 %{__gettextize}
@@ -58,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install-data DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT{%{_applnkdir}/Network/Misc,%{_pixmapsdir}}
-mv -f $RPM_BUILD_ROOT{/usr/share/applications,%{_applnkdir}/Network/Misc}/lmule.desktop
+mv -f $RPM_BUILD_ROOT{/usr/share/applications,%{_applnkdir}/Network/Misc}/xmule.desktop
 
 %find_lang %{name}
 
@@ -70,4 +73,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_pixmapsdir}/*
-%{_applnkdir}/Network/Misc/lmule.desktop
+%{_applnkdir}/Network/Misc/%{name}.desktop
