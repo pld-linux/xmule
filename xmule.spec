@@ -4,12 +4,12 @@
 Summary:	Unix port of eMule client
 Summary(pl):	Uniksowy port klienta eMule
 Name:		xmule
-Version:	1.4.1a
+Version:	1.4.2
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5:	f30e9174e74487b0ee68ab072183dfdf
+# Source0-md5:	b7ccb971d0ec1bb0d77511cb4ed9b144
 URL:		http://www.xmule.org/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.7.3
