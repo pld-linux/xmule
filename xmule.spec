@@ -44,14 +44,14 @@ xMule to linuksowy port klienta eMule.
 %patch1 -p1
 
 %build
-cp -f %{_datadir}/automake/config.sub .
+cp -f /usr/share/automake/config.sub .
 rm -f missing
 %{__gettextize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
 %configure \
-	--with-wx-config=%{_bindir}/wxgtk%{!?with_gtk1:2}-2.4-config \
+	--with-wx-config=/usr/bin/wxgtk%{!?with_gtk1:2}-2.4-config \
 	--enable-optimise \
 	--enable-profile
 %{__make}
