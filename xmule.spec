@@ -17,7 +17,7 @@ Patch2:		%{name}-types.patch
 Patch3:		%{name}-locale_names.patch
 URL:		http://www.xmule.org/
 BuildRequires:	autoconf
-BuildRequires:	automake >= 1.7.3
+BuildRequires:	automake >= 1:1.7.3
 BuildRequires:	bison
 BuildRequires:	expat-devel
 BuildRequires:	gettext-devel >= 0.11.5
