@@ -51,7 +51,7 @@ rm -f missing
 %{__autoconf}
 %{__autoheader}
 %configure \
-	--with-wx-config=/usr/bin/wxgtk%{?without_gtk1:2}-2.4-config \
+	--with-wx-config=/usr/bin/wxgtk%{!?with_gtk1:2}-2.4-config \
 	--enable-optimise \
 	--enable-profile
 %{__make}
