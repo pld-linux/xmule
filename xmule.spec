@@ -43,6 +43,7 @@ xMule to linuksowy port klienta eMule.
 %patch1 -p1
 
 %build
+cp -f /usr/share/automake/config.sub .
 rm -f missing
 %{__gettextize}
 %{__aclocal}
