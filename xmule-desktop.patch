@@ -1,7 +1,7 @@
 diff -burN xmule-1.8.2.orig/xmule.desktop xmule-1.8.2/xmule.desktop
 --- xmule-1.8.2.orig/xmule.desktop	2004-07-04 22:42:43.757651736 +0200
 +++ xmule-1.8.2/xmule.desktop	2004-07-04 22:44:04.360398256 +0200
-@@ -1,8 +1,10 @@
+@@ -1,8 +1,11 @@
  [Desktop Entry]
  Name=xmule
  Comment=xMule for Linux
@@ -12,4 +12,5 @@ diff -burN xmule-1.8.2.orig/xmule.desktop xmule-1.8.2/xmule.desktop
  Type=Application
 -Categories=Application;Network;
 +Categories=GTK;Network;P2P;
++Encoding=UTF-8
 +# vi: encoding=utf-8
