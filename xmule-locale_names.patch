@@ -1,0 +1,9 @@
+--- xmule-1.8.4/po/LINGUAS~	Sun Jul 25 21:26:25 2004
++++ xmule-1.8.4/po/LINGUAS	Sun Jul 25 21:26:25 2004
+@@ -7,5 +7,5 @@
+ es
+ es_MX
+ pl
+-ee
++et
+ 
