@@ -1,12 +1,12 @@
 Summary:	Unix port of eMule client
 Summary(pl):	Uniksowy port klienta eMule
 Name:		xmule
-Version:	1.9.0
-Release:	1
+Version:	1.9.4
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/xmule/%{name}-%{version}.tar.bz2
-# Source0-md5:	6610cb64b6e5832926eece3a08ae97e8
+# Source0-md5:	6a466ba740b55e6d283622aa84570921
 Patch0:		%{name}-pl_typos.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-types.patch
@@ -35,7 +35,7 @@ xMule to linuksowy port klienta eMule.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
+#%patch2 -p1
 %patch3 -p1
 
 mv -f po/{ee,et}.po
