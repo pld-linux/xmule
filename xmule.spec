@@ -1,7 +1,3 @@
-#
-# Conditional build:
-%bcond_with	gtk1	# build with gtk1 instead of gtk2
-#
 Summary:	Unix port of eMule client
 Summary(pl):	Uniksowy port klienta eMule
 Name:		xmule
@@ -21,13 +17,8 @@ BuildRequires:	automake >= 1:1.7.3
 BuildRequires:	bison
 BuildRequires:	expat-devel
 BuildRequires:	gettext-devel >= 0.11.5
-%if %{with gtk1}
-BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	wxGTK-devel >= 2.4.0
-%else
-BuildRequires:	gtk+2-devel
-BuildRequires:	wxGTK2-devel >= 2.4.0
-%endif
+BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	wxGTK2-devel >= 2.6.0
 BuildRequires:	libstdc++-devel
 Requires:	wget
 Obsoletes:	aMule
@@ -58,7 +49,7 @@ cp -f /usr/share/automake/config.sub .
 %configure \
 	--prefix=$RPM_BUILD_ROOT \
 	--disable-debug-syms \
-	--with-wx-config=/usr/bin/wxgtk%{!?with_gtk1:2}-2.4-config 
+	--with-wx-config=/usr/bin/wx-gtk2-ansi-config 
 %{__make}
 
 %install
