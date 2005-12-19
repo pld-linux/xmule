@@ -1,0 +1,11 @@
+--- xmule-1.12.2/src/xmule.make.in.orig	2005-12-18 20:34:23.875835000 +0100
++++ xmule-1.12.2/src/xmule.make.in	2005-12-18 20:34:53.009655750 +0100
+@@ -9,7 +9,7 @@
+ TARGET =
+ 
+ ifeq ($(HAVE_XRC), 1)
+-    LDFLAGS += `wx-config --libs xrc`
++    LDFLAGS += `wx-gtk2-ansi-config --libs xrc`
+ else
+     CFLAGS += -I../xLibs/xrc
+     LDFLAGS += -L$(LIBDIR) -lxrc
