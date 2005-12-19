@@ -1,25 +1,28 @@
+# TODO: it hanges after few minutes, hgw why.
 Summary:	Unix port of eMule client
 Summary(pl):	Uniksowy port klienta eMule
 Name:		xmule
-Version:	1.9.4
-Release:	1
+Version:	1.12.2
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/xmule/%{name}-%{version}.tar.bz2
-# Source0-md5:	6a466ba740b55e6d283622aa84570921
+# Source0-md5:	372c02793f8282312a1370443420fda7
 Patch0:		%{name}-pl_typos.patch
 Patch1:		%{name}-desktop.patch
-Patch2:		%{name}-types.patch
-Patch3:		%{name}-locale_names.patch
-Patch4:		%{name}-configure.patch
-URL:		http://www.xmule.org/
+Patch2:		%{name}-locale_names.patch
+Patch3:		%{name}-configure.patch
+Patch4:		%{name}-wx-config.patch
+Patch5:		%{name}-libcrypto.patch
+URL:		http://www.xmule.ws/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.7.3
 BuildRequires:	bison
+BuildRequires:	cryptopp-devel
 BuildRequires:	expat-devel
-BuildRequires:	gettext-devel >= 0.11.5
-BuildRequires:	gtk+2-devel >= 2.0.0
-BuildRequires:	wxGTK2-devel >= 2.6.0
+BuildRequires:	gettext-devel >= 0.14.5
+BuildRequires:	gtk+2-devel >= 2.0.3
+BuildRequires:	wxGTK2-devel >= 2.6.2
 BuildRequires:	libstdc++-devel
 Requires:	wget
 Obsoletes:	aMule
@@ -39,10 +42,13 @@ xMule to linuksowy port klienta eMule.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 mv -f po/{ee,et}.po
 
 %build
+# Regenerate POTFILES.in because it wasn't actualized since 2004
+for i in src/*.cpp; do echo $i; done > po/POTFILES.in
 cp -f /usr/share/automake/config.sub .
 %{__gettextize}
 %{__aclocal}
@@ -57,7 +63,8 @@ cp -f /usr/share/automake/config.sub .
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_desktopdir},%{_pixmapsdir}}
-install {ed2k,xmule} $RPM_BUILD_ROOT%{_bindir}
+install {ed2k.xmule-2.0,xmule} $RPM_BUILD_ROOT%{_bindir}
+ln -sf %{_bindir}/ed2k.xmule-2.0 $RPM_BUILD_ROOT%{_bindir}/ed2k
 install xmule.desktop $RPM_BUILD_ROOT%{_desktopdir}/xmule.desktop
 install xmule.xpm $RPM_BUILD_ROOT%{_pixmapsdir}/xmule.xpm
 cd po
@@ -74,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f xMule.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog ChangeLog-UNSTABLE README TODO
+%doc ChangeLog ChangeLog-UNSTABLE docs/{AUTHORS,ED2K-Links.HOWTO,README,TODO}
 %attr(755,root,root) %{_bindir}/*
 %{_pixmapsdir}/*
 %{_desktopdir}/%{name}.desktop
