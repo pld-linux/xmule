@@ -1,20 +1,10 @@
---- xmule-1.9.4/configure.ac.orig	2004-10-30 23:19:11.000000000 +0200
-+++ xmule-1.9.4/configure.ac	2005-05-17 01:04:47.000000000 +0200
+--- xmule-1.12.2/configure.ac.orig	2005-12-03 00:05:56.000000000 +0100
++++ xmule-1.12.2/configure.ac	2005-12-17 10:23:39.608751000 +0100
 @@ -1,6 +1,7 @@
  # Process this file with autoconf to produce a configure script.
  AC_PREREQ(2.53)
- AC_INIT([xMule],[1.9.4],[http://www.xmule.ws/])
-+AM_INIT_AUTOMAKE(xMule, 1.9.4)
+ AC_INIT([xMule],[1.12.2],[http://www.xmule.ws/])
++AM_INIT_AUTOMAKE(xMule, 1.12.2)
  AC_CONFIG_SRCDIR([src/SharedFileList.h])
  AC_CONFIG_HEADER([config.h])
  CONFIG=Release
-@@ -53,9 +54,6 @@
- if test x"$GTK_USEDVERSION" = x"2" ; then
-   AM_PATH_GTK_2_0(2.0.3, havegtk2=yes, havegtk2=no, gthread)
-   GTK_DEFS="-D__GTK2__"
--else
--  AM_PATH_GTK(1.2.0, havegtk=yes, havegtk=no, gthread)
--  GTK_DEFS=""
- fi
- 
- CHECK_ZLIB	
