@@ -1,0 +1,14 @@
+--- xmule-1.12.2/configure.ac.orig	2005-12-18 20:37:42.240232000 +0100
++++ xmule-1.12.2/configure.ac	2005-12-18 20:37:51.948838750 +0100
+@@ -83,11 +83,6 @@
+     have_crypto="yes"
+ fi
+ 
+-if test x"$have_cryptopp2" = x"yes"; then
+-    cryp_name="crypto++"
+-    have_crypto="yes"
+-fi
+-
+ if test x"$have_crypto" = x"yes"; then
+     echo "Cryp name: -$cryp_name-"
+   AC_DEFINE_UNQUOTED(HAVE_CRYPTOPP, 1, [Define if you have the Crypto++ development headers and libraries.])
