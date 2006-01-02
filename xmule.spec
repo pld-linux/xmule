@@ -3,7 +3,7 @@ Summary:	Unix port of eMule client
 Summary(pl):	Uniksowy port klienta eMule
 Name:		xmule
 Version:	1.12.2
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/xmule/%{name}-%{version}.tar.bz2
@@ -22,8 +22,9 @@ BuildRequires:	cryptopp-devel
 BuildRequires:	expat-devel
 BuildRequires:	gettext-devel >= 0.14.5
 BuildRequires:	gtk+2-devel >= 2.0.3
-BuildRequires:	wxGTK2-devel >= 2.6.2
 BuildRequires:	libstdc++-devel
+BuildRequires:	pkgconfig
+BuildRequires:	wxGTK2-devel >= 2.6.2
 Requires:	wget
 Obsoletes:	aMule
 Obsoletes:	lmule
