@@ -1,0 +1,1 @@
+- wx-config is broken and doesn't define __WXGTK20__ symbol
