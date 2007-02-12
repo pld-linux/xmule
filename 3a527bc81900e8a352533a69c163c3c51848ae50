@@ -1,0 +1,3 @@
+- Updated to 1.1.13
+- Removed polish translation (already included in this version)
+- Fixed source0 (bz2 now)
