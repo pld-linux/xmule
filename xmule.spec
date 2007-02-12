@@ -1,6 +1,6 @@
 # TODO: it hanges after few minutes, hgw why.
 Summary:	Unix port of eMule client
-Summary(pl):	Uniksowy port klienta eMule
+Summary(pl.UTF-8):   Uniksowy port klienta eMule
 Name:		xmule
 Version:	1.12.2
 Release:	0.2
@@ -33,7 +33,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 xMule is a Linux port of eMule client.
 
-%description -l pl
+%description -l pl.UTF-8
 xMule to linuksowy port klienta eMule.
 
 %prep
