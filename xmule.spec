@@ -1,6 +1,6 @@
 # TODO: it hanges after few minutes, hgw why.
 Summary:	Unix port of eMule client
-Summary(pl.UTF-8):   Uniksowy port klienta eMule
+Summary(pl.UTF-8):	Uniksowy port klienta eMule
 Name:		xmule
 Version:	1.12.2
 Release:	0.2
