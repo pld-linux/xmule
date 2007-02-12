@@ -1,0 +1,3 @@
+- updated to 1.2.0
+- rel 1
+- removed gcc & gtk2 patch (not needed)
