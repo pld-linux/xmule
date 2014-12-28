@@ -20,7 +20,7 @@ BuildRequires:	automake >= 1:1.7.3
 BuildRequires:	bison
 BuildRequires:	cryptopp-devel
 BuildRequires:	expat-devel
-BuildRequires:	gettext-devel >= 0.14.5
+BuildRequires:	gettext-tools >= 0.14.5
 BuildRequires:	gtk+2-devel >= 2.0.3
 BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig
